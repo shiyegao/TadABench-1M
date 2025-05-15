@@ -1,0 +1,8 @@
+__pycache__
+wandb/
+path/
+ckpt/
+tmp/
+data/
+output/
+*.log
