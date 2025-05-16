@@ -6,10 +6,16 @@ The dataset is available at [TadABench-1M](https://huggingface.co/datasets/JinGa
 
 # Installation
 
-You should first install the [uv](https://docs.astral.sh/uv/) package manager.
+Clone the repository:
+```bash
+git clone https://github.com/JinGao/TadABench-1M.git
+cd TadABench-1M
+export PYTHONPATH=$PYTHONPATH:$(pwd)  # Add the project root to the PYTHONPATH before usage
+```
 
-Then, you can install the dependencies by running the following command:
 
+
+Install the dependencies. (You should first install the [uv](https://docs.astral.sh/uv/) package manager.)
 ```bash
 uv sync
 ```
@@ -21,6 +27,9 @@ uv sync
 You can run the following commands to train the MLP model on the TadABench-1M dataset.
 
 ```bash
+# Note to add the project root to the PYTHONPATH
+export PYTHONPATH=$PYTHONPATH:$(pwd)
+
 uv run scripts/run.py --cfg_path config/NB1M_ood_MLP_ESM2-35M.py
 uv run scripts/run.py --cfg_path config/NB1M_ood_MLP_ESMC-300M.py
 uv run scripts/run.py --cfg_path config/NB1M_ood_MLP_NT-50M.py
